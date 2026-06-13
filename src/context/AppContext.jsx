@@ -7,8 +7,16 @@ export const useApp = () => useContext(AppContext);
 export const AppProvider = ({ children }) => {
   const [activePage, setActivePage] = useState('home');
   const [cart, setCart] = useState(() => {
-    const saved = localStorage.getItem('fitkit_cart');
-    return saved ? JSON.parse(saved) : [];
+    try {
+      const saved = localStorage.getItem('fitkit_cart');
+      if (saved && saved !== 'undefined') {
+        const parsed = JSON.parse(saved);
+        return Array.isArray(parsed) ? parsed : [];
+      }
+    } catch (e) {
+      console.error('Failed to parse cart from localStorage:', e);
+    }
+    return [];
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [checkoutPlan, setCheckoutPlan] = useState(null);
