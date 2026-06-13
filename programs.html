@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FIT KIT - Training Programs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#410000",
+                        "on-error": "#690005",
+                        "secondary-container": "#474746",
+                        "surface-bright": "#38393d",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary-container": "#929090",
+                        "outline-variant": "#603e39",
+                        "primary": "#ffb4a8",
+                        "outline": "#b18780",
+                        "on-background": "#e3e2e7",
+                        "inverse-primary": "#c00100",
+                        "on-primary-container": "#5c0000",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "background": "#000000",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#ffdad4",
+                        "on-secondary": "#313030",
+                        "primary-container": "#ff5540",
+                        "surface-container-lowest": "#0d0e12",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3034",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-surface": "#e3e2e7",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container": "#1e1f23",
+                        "surface-variant": "#343539",
+                        "surface": "#000000",
+                        "on-tertiary-container": "#2a2a2a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-surface-variant": "#b7b5b4",
+                        "tertiary": "#c8c6c6",
+                        "on-primary-fixed-variant": "#930100",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-container-low": "#1a1b1f",
+                        "surface-tint": "#ffb4a8",
+                        "on-tertiary": "#303030",
+                        "on-secondary-container": "#b7b5b4",
+                        "on-primary": "#690100",
+                        "surface-dim": "#121317",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "secondary": "#c8c6c5",
+                        "surface-container-highest": "#343539",
+                        "surface-container-high": "#292a2e",
+                        "inverse-surface": "#e3e2e7",
+                        "brand-red": "#FF0000",
+                        "brand-grey-light": "#b7b5b4",
+                        "brand-grey-dark": "#1e1f23"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Bebas Neue"],
+                        "body-lg": ["Montserrat"],
+                        "label-bold": ["Montserrat"],
+                        "display-lg": ["Bebas Neue"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["96px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.1", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e3e2e7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-gritty-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, #000000 100%);
+        }
+        .program-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #1e1f23;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+        .program-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, #000000 0%, transparent 80%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .program-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/10 shadow-2xl flex justify-between items-center px-margin-desktop py-unit-2 mx-auto">
+<a class="font-display-lg text-headline-lg text-on-surface uppercase tracking-tighter" href="#">FIT KIT</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-bold text-label-bold text-brand-grey-light hover:text-brand-red transition-colors" href="#">Home</a>
+<a class="font-label-bold text-label-bold text-brand-grey-light hover:text-brand-red transition-colors" href="#">About</a>
+<a class="font-label-bold text-label-bold text-brand-red border-b-2 border-brand-red pb-1" href="#">Programs</a>
+<a class="font-label-bold text-label-bold text-brand-grey-light hover:text-brand-red transition-colors" href="#">Trainers</a>
+<a class="font-label-bold text-label-bold text-brand-grey-light hover:text-brand-red transition-colors" href="#">Pricing</a>
+<a class="font-label-bold text-label-bold text-brand-grey-light hover:text-brand-red transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-4">
+<button class="text-brand-red hover:text-white hover:bg-brand-red transition-all duration-300 p-2 rounded-full flex items-center justify-center scale-95 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+</button>
+</div>
+<button class="bg-brand-red hover:bg-[#D40000] text-white font-label-bold text-label-bold uppercase px-6 py-3 rounded-none transition-colors hidden md:block">
+                JOIN NOW
+            </button>
+<button class="md:hidden text-brand-red p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section for Programs -->
+<section class="relative w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center text-center overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="Gym Background" class="w-full h-full object-cover object-center grayscale mix-blend-overlay" data-alt="A massive, dimly lit brutalist gym setting with heavy iron plates and a dark, gritty atmosphere. High-contrast lighting highlights the raw texture of the equipment and concrete floor. The overall aesthetic is dark mode, intense, and focused on serious strength training." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIuMPwMGXUUi9NkrWluWEGPJtInn_ryS23VpgCCD5yb1OM6eIRct_xnTfdJu3yJsH94cTDkm_pL5smmd5ILXhtmXFA3FllKZcuKQAFgp2b-MfCSBBGfKuu0vfKT5IyLQ507PW_gZPpiNVl2JqcBCdB62ocHTfZ_rD93mgFS-sL102ljkFaBQZT3DhKOxCosL1pkHM-SGToJ0RHmBcc-9nF9-PU6hbsX28tAor4qrNxTyWNFPZ-Q9UIG64O0kd5m6pjkrrhyWCtB54q"/>
+<div class="absolute inset-0 bg-gritty-overlay"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto space-y-6">
+<h4 class="font-label-bold text-label-bold text-brand-red uppercase tracking-widest">— UNLEASH YOUR POTENTIAL</h4>
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tight">TRAINING PROGRAMS</h1>
+<p class="font-body-lg text-body-lg text-brand-grey-light max-w-2xl mx-auto">
+                    Select a discipline tailored to your goals. Our high-intensity programs are designed to push you beyond your limits, using proven methods and elite coaching.
+                </p>
+</div>
+</section>
+<!-- Programs Grid -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-black">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-gutter">
+<!-- Bodybuilding Card -->
+<div class="program-card relative h-[500px] overflow-hidden group border border-white/5 cursor-pointer">
+<img alt="Bodybuilding" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" data-alt="A muscular athlete performing a heavy barbell back squat in a dark, gritty gym environment. The lighting is dramatic, emphasizing muscle definition and raw effort. The scene conveys intense bodybuilding and strength focus in a high-contrast dark aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3SDIzO_sX3oOrlec3SimEzD8odhHFLgVetXNe9ElAkjFJsL4RxbxLjISwC7TQA79PSpB__Tq4BITW-U9IIX4XZng-H9KprUWtt5ftUt9gyVo66MEJE7ZVqYvGgdFyta30R2risbuAxhhf5UlyANbCD66QaGr46KJSCKIW2niSfVrIBDfTKpi8skMq5ei9xXQ-tNTac49wMt3sRHNqSE3NcQ6OriluCSBZHnIBgUPml5G65nNXdEyernLBpgfnHN6MSA2mrLAvRkg1"/>
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-brand-red text-white font-label-bold text-[12px] px-3 py-1 uppercase">Hypertrophy</span>
+</div>
+<div class="program-content absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end h-full">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-2">BODYBUILDING</h2>
+<p class="font-body-md text-body-md text-brand-grey-light mb-6 line-clamp-2">
+                            Sculpt your physique with focused hypertrophy training. Master isolation movements and heavy compound lifts to maximize muscle growth and definition.
+                        </p>
+<a class="inline-block border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-label-bold text-label-bold uppercase px-8 py-3 text-center transition-colors w-max" href="#">
+                            EXPLORE PROGRAM
+                        </a>
+</div>
+</div>
+<!-- Crossfit Card -->
+<div class="program-card relative h-[500px] overflow-hidden group border border-white/5 cursor-pointer">
+<img alt="Crossfit" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" data-alt="An athlete doing ring muscle-ups in a rugged functional fitness box. Chalk dust hangs in the air against a dark background. The lighting is harsh and dramatic, highlighting endurance and athletic power in a brutalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgcFSjADULEHRPFHONDhwrdVi7GH5RFHHJBUicK1ApnMfpM4bHyxWgIOpiERIQW1JATIEhJf2mh6aPeUWgK6yd3-jNY4Ldi1Mzk4rDQBXDByEh3pRW5cl62_biHvP_kYZD8CFj0dmoG5GusiL8bRsr0Z-6VkdSVEWMdyuqBGrj2Anpy1fQaezRbWrBbehwqNvJBRwyFwcE2y1Pn1DXty-pRFaUtRFQV_RchssOkJXoewEVm5BeRX5V5EkjXMenKMT2XIpuj8Supwc"/>
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-brand-red text-white font-label-bold text-[12px] px-3 py-1 uppercase">Functional</span>
+</div>
+<div class="program-content absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end h-full">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-2">CROSSFIT</h2>
+<p class="font-body-md text-body-md text-brand-grey-light mb-6 line-clamp-2">
+                            Constantly varied, high-intensity functional movements. Combine gymnastics, weightlifting, and metabolic conditioning for ultimate overall fitness.
+                        </p>
+<a class="inline-block border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-label-bold text-label-bold uppercase px-8 py-3 text-center transition-colors w-max" href="#">
+                            EXPLORE PROGRAM
+                        </a>
+</div>
+</div>
+<!-- HIIT Card -->
+<div class="program-card relative h-[500px] overflow-hidden group border border-white/5 cursor-pointer">
+<img alt="HIIT" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" data-alt="A person sweating profusely while sprinting on a curved treadmill in a dark, neon-accented workout space. The image captures speed and exhaustion, fitting a high-intensity interval training vibe with deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNUWQ0_tIcGl3_AAIcdeJKlu24TuF-7wXSKHiJ6Nflj9jHSXTNzpXr2luioSkMP__Ql60vol3qgrcFZ6BITWOPN1OAZ6XeSu1jOPCTyPEDr_vJs19Lf2KRRVvk6e5nSLQuQraIx8XiWXhnalUnONprZZgQ7NjNd-KkutLIPuI9GlwLi1XDo4vBm2gJDwm_dzyp1_kivhd_pEOuCfjS46d1SRLOGTvuO11KnpEHr3B_jueUcmw68CLoI-9PUYNFg-tn4hXOxaIu7HeE"/>
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-brand-red text-white font-label-bold text-[12px] px-3 py-1 uppercase">Endurance</span>
+</div>
+<div class="program-content absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end h-full">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-2">H.I.I.T.</h2>
+<p class="font-body-md text-body-md text-brand-grey-light mb-6 line-clamp-2">
+                            High-Intensity Interval Training designed to torch calories and build cardiovascular endurance rapidly through short, explosive work periods.
+                        </p>
+<a class="inline-block border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-label-bold text-label-bold uppercase px-8 py-3 text-center transition-colors w-max" href="#">
+                            EXPLORE PROGRAM
+                        </a>
+</div>
+</div>
+<!-- Personal Training Card -->
+<div class="program-card relative h-[500px] overflow-hidden group border border-white/5 cursor-pointer">
+<img alt="Personal Training" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0" data-alt="A personal trainer spotting a client during a heavy dumbbell bench press. The setting is an exclusive, dimly lit iron gym. The focus is on form, intensity, and one-on-one coaching in a premium, dark aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4mzsoA8ARIRyWCndqNj5VGrM4CxvU8imB9lyJfYXsL9ORUjU_bvC-xlYybZmGSTbB2nceK56KCrj2mVi4pudoEbL2NsWzHe-0-aiA4PxsyWbvuQxtSveqQ2jVleokmlPO2o9vmEUNurfn1OcXMr9VeD7sx7UJbQZ-UEDuKiHf6kDF5QPGGyyYj0MbUQIEcyFH5PVlc34vXCchS_9X8oe59p9Bdd8r_61_Gba5BKOi3dSSgkKRewVEDpjLygblaGLe5DNGu2UZ6cTN"/>
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-brand-red text-white font-label-bold text-[12px] px-3 py-1 uppercase">1-on-1</span>
+</div>
+<div class="program-content absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end h-full">
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-2">PERSONAL TRAINING</h2>
+<p class="font-body-md text-body-md text-brand-grey-light mb-6 line-clamp-2">
+                            Bespoke programming and dedicated coaching. Work directly with an elite trainer to address your specific weaknesses and accelerate your results.
+                        </p>
+<a class="inline-block border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-label-bold text-label-bold uppercase px-8 py-3 text-center transition-colors w-max" href="#">
+                            EXPLORE PROGRAM
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-8 border-t-4 border-brand-red bg-black grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col items-start justify-start opacity-80 hover:opacity-100 transition-opacity">
+<span class="font-display-lg text-headline-lg text-brand-red">FIT KIT</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-col items-end justify-start space-y-4">
+<div class="flex space-x-6 flex-wrap justify-end">
+<a class="font-body-md text-body-md text-brand-grey-light hover:text-brand-red transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-brand-grey-light hover:text-brand-red transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-brand-grey-light hover:text-brand-red transition-colors" href="#">Location Finder</a>
+<a class="font-body-md text-body-md text-brand-grey-light hover:text-brand-red transition-colors" href="#">Careers</a>
+</div>
+<p class="font-body-md text-body-md text-brand-grey-light text-right">
+                © 2024 FIT KIT PERFORMANCE CENTERS. ALL RIGHTS RESERVED.
+            </p>
+</div>
+</footer>
+</body></html>

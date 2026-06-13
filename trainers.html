@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Trainers - FIT KIT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2f3034",
+                        "on-secondary-container": "#b7b5b4",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#121317",
+                        "on-error": "#690005",
+                        "on-secondary": "#313030",
+                        "on-surface-variant": "#ebbbb4",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-container": "#929090",
+                        "on-secondary-fixed-variant": "#474746",
+                        "outline-variant": "#603e39",
+                        "on-primary-fixed": "#410000",
+                        "surface-container": "#1e1f23",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "on-primary-container": "#5c0000",
+                        "secondary": "#c8c6c5",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#292a2e",
+                        "surface-container-highest": "#343539",
+                        "background": "#000000",
+                        "primary-container": "#ff5540",
+                        "inverse-primary": "#c00100",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#ff5540",
+                        "on-tertiary": "#303030",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "surface-container-low": "#1a1b1f",
+                        "surface": "#000000",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-fixed": "#e4e2e1",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-primary": "#690100",
+                        "surface-bright": "#38393d",
+                        "inverse-surface": "#e3e2e7",
+                        "outline": "#b18780",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "error-container": "#93000a",
+                        "on-background": "#e3e2e7",
+                        "surface-tint": "#ffb4a8",
+                        "secondary-container": "#343539",
+                        "surface-container-lowest": "#0d0e12",
+                        "surface-variant": "#343539",
+                        "on-surface": "#e3e2e7",
+                        "on-tertiary-container": "#2a2a2a",
+                        "primary-fixed": "#ffdad4",
+                        "tertiary": "#c8c6c6",
+                        "on-primary-fixed-variant": "#930100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin-mobile": "20px",
+                        "base": "8px",
+                        "container-margin-desktop": "48px",
+                        "section-gap": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Bebas Neue"],
+                        "headline-lg": ["Bebas Neue"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Bebas Neue"],
+                        "headline-md": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "48px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["80px", { "lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "32px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #000000; color: #e3e2e7; }
+        .glass-card {
+            background: #1e1f23;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .trainer-card:hover .social-overlay { opacity: 1; }
+        .social-overlay { transition: opacity 0.3s ease; }
+    </style>
+</head>
+<body class="font-body-md antialiased overflow-x-hidden pt-24">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-2xl">
+<div class="flex justify-between items-center px-container-margin-desktop py-4 w-full mx-auto max-w-7xl">
+<!-- Brand Logo -->
+<a class="font-display-lg text-headline-md text-on-surface uppercase tracking-tighter" href="#">FIT KIT</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center font-label-lg text-label-lg">
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 px-3 py-1 rounded" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 px-3 py-1 rounded" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 px-3 py-1 rounded" href="#">Programs</a>
+<a class="text-primary border-b-2 border-primary pb-1 px-3 py-1 transition-all duration-300 rounded" href="#">Trainers</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 px-3 py-1 rounded" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 px-3 py-1 rounded" href="#">Contact</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center space-x-4">
+<button class="hidden md:block bg-primary text-on-primary-container px-6 py-2 font-label-lg text-label-lg rounded-DEFAULT scale-95 active:scale-90 transition-all hover:bg-primary/90 uppercase">
+                JOIN NOW
+            </button>
+<button aria-label="Shopping Cart" class="text-on-surface hover:text-primary scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+<button aria-label="Menu" class="md:hidden text-on-surface hover:text-primary scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Page Header / Hero -->
+<header class="relative w-full h-[409px] md:h-[512px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-black/60 z-10"></div>
+<img alt="A wide shot of a dark, industrial gym setting with heavy weights and dramatic spotlighting, setting a gritty and intense mood for the trainers page." class="absolute inset-0 w-full h-full object-cover grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUWuPCgGQ0nL0QrfrDXDWkeP76usAWgHY-DKMVdbQUvu1d0nkQ03CoK-iQHkBzewCsIfy5FD6oBJ3--AWcWYM1rLO6ZimMnqBVa_BX51uUd9JdCOQ_-zx3qfq56CxS0yx_73HfAyr5OGyxd-63wSJKMxtXr1DZeHYwH_HvAReSjE0g5lkVXS0m6HBskD_-cOpUA-yZ7QDPu6sVhHv1INrhMQAkfFQ5cHlFza2pXm26A2ucD6Wa7NvS6Vth7gUutPgwGfzskK97U-hV"/>
+<div class="relative z-20 text-center px-container-margin-mobile md:px-container-margin-desktop">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg text-on-surface uppercase mb-4 tracking-wider">Meet The <span class="text-primary">Experts</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Elite professionals dedicated to forging your ultimate physique and potential.</p>
+</div>
+</header>
+<!-- Main Content: Trainers Section -->
+<main class="py-section-gap px-container-margin-mobile md:px-container-margin-desktop max-w-7xl mx-auto">
+<div class="mb-16 text-center md:text-left border-l-4 border-primary pl-6">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase">Our Roster</h2>
+<p class="font-body-md text-body-md text-secondary mt-2">Uncompromising discipline. Unmatched expertise.</p>
+</div>
+<!-- Trainers Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Trainer 1 -->
+<div class="trainer-card relative group rounded-lg overflow-hidden glass-card cursor-pointer transform transition-transform duration-500 hover:-translate-y-2">
+<div class="relative h-96 w-full">
+<img alt="Portrait of a muscular male fitness trainer" class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrUbLAFFFxBTRaJO3n84pRiSv89KMekHrJMGKCK7bKD0Z7-uX2IYsIXpLDM5u9AfYDU_43TfKjVHUTueKjTefm5FN69zBEtIlxMyudLmbB74k8s4eHIdqmK9DJvsguILA4KIGmHSLbTI6tuIkxXpcibGP9ngAAqrbpDzKa36DzSQENFSdnMkyNfe6hEnPK8MiTCVUcz55kxNrNDkL2WBS_ND1jQQ1ufN6vsztTzAyV2VFxSpeFSv21ETHqz_OF3o0U70FRVTceEHFj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+<!-- Social Overlay -->
+<div class="social-overlay absolute inset-0 bg-black/60 opacity-0 flex items-center justify-center space-x-6 backdrop-blur-sm">
+<a class="text-on-surface hover:text-primary transition-colors p-2 bg-surface-container/50 rounded-full" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-on-surface hover:text-primary transition-colors p-2 bg-surface-container/50 rounded-full" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="p-6 relative z-10 -mt-16 bg-surface-container/90 backdrop-blur-md mx-4 mb-4 rounded-DEFAULT border border-outline-variant/20">
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-1">Marcus Vance</h3>
+<p class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-3">Head Strength Coach</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Specializing in raw powerlifting and hypertrophic conditioning. Marcus brings 15 years of competitive experience to forge unbreakable athletes.</p>
+</div>
+</div>
+<!-- Trainer 2 -->
+<div class="trainer-card relative group rounded-lg overflow-hidden glass-card cursor-pointer transform transition-transform duration-500 hover:-translate-y-2">
+<div class="relative h-96 w-full">
+<img alt="Portrait of a fierce female fitness trainer" class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgDR6M0TFejNAKGNaJ6BLmt7LQ72WFEFylKQ637Mrjr55v2Cq7IcBkdrpaJoUGiwv4GTuUDYKR5irWt7A0wg6aDIlnKoxq3KAKiHlrQQxki6T6ChT-t00vn-uA2gLLgUAo6FThtCRtvUuVPco-_2uj29xsXLK-oLaa7tMqeAqM04bPawzx9Ab3PXJrqkceyriUhVdEbZhVh--mcG45PsyH028sGvkdwmRIER4tTmjBWOrXIf6F5anznZYul-kDgHaujW9IYcXkXfA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+<div class="social-overlay absolute inset-0 bg-black/60 opacity-0 flex items-center justify-center space-x-6 backdrop-blur-sm">
+<a class="text-on-surface hover:text-primary transition-colors p-2 bg-surface-container/50 rounded-full" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-on-surface hover:text-primary transition-colors p-2 bg-surface-container/50 rounded-full" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="p-6 relative z-10 -mt-16 bg-surface-container/90 backdrop-blur-md mx-4 mb-4 rounded-DEFAULT border border-outline-variant/20">
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-1">Elena Rostova</h3>
+<p class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-3">HIIT &amp; Agility Specialist</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Former Olympic sprinter turning everyday individuals into highly functional, explosive performers through relentless metabolic conditioning.</p>
+</div>
+</div>
+<!-- Trainer 3 -->
+<div class="trainer-card relative group rounded-lg overflow-hidden glass-card cursor-pointer transform transition-transform duration-500 hover:-translate-y-2">
+<div class="relative h-96 w-full">
+<img alt="Portrait of a male nutrition and bodybuilding expert" class="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCm57ed2jflYbweTm4ybzmkSKDR6yccYADzMTcZWgLJ4TebtLLotjraMAJmwh-iBTBplDVBQAhNpZeECH6eLOSCtHDAgTo0-bG7lp6iUC1Nm9ro42jWfHimzMXNjStOD94ckaKHvzzUIw-0EObjN_LS6N5PpZB877AbyStERCZj5T6bi1noZeNd9zilM1pV8f16QamsG8MrGIZKPl279ywvKBtQj65oCD39gTYEzH9eh8KJLUMmGczWlaGZCCS049v7-Cw9AASqHotv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+<div class="social-overlay absolute inset-0 bg-black/60 opacity-0 flex items-center justify-center space-x-6 backdrop-blur-sm">
+<a class="text-on-surface hover:text-primary transition-colors p-2 bg-surface-container/50 rounded-full" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-on-surface hover:text-primary transition-colors p-2 bg-surface-container/50 rounded-full" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="p-6 relative z-10 -mt-16 bg-surface-container/90 backdrop-blur-md mx-4 mb-4 rounded-DEFAULT border border-outline-variant/20">
+<h3 class="font-headline-md text-headline-md text-primary uppercase mb-1">David Chen</h3>
+<p class="font-label-lg text-label-lg text-secondary uppercase tracking-widest mb-3">Nutrition &amp; Bodybuilding</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Mastering the science of muscle growth. David combines precise macronutrient strategies with intense isolation training for peak aesthetic results.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-8 bg-black border-t-4 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-container-margin-desktop max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 mb-8 md:mb-0">
+<a class="font-display-lg text-headline-lg text-primary uppercase mb-4 block" href="#">FIT KIT</a>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity">
+                © 2024 FIT KIT PERFORMANCE CENTERS. ALL RIGHTS RESERVED.
+            </p>
+</div>
+<!-- Links Columns -->
+<div class="col-span-1">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Legal</h4>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Company</h4>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Location Finder</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<!-- Social/Contact -->
+<div class="col-span-1">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Connect</h4>
+<div class="flex space-x-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
